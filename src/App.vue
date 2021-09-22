@@ -22,9 +22,10 @@ export default {
 </script>
 
 <style lang="scss">
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+  @import "./style/generals";
+  @import "./style/vars";
+
+  body {
+    background-color: $primary;
+  }
 </style>

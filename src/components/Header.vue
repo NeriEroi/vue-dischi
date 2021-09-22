@@ -14,11 +14,14 @@ export default {
 }
 </script>
 
-<style>
+<style scoped lang="scss">
+@import "../style/generals";
+@import "../style/vars";
+
     .row {
         width: 100%;
-        height: 10vh;
-        background-color: #2E3A46;
+        height: 80px;
+        background-color: $light;
     } .logo_cont {
         width: 5%;
         height: 100%;

@@ -36,11 +36,19 @@ export default {
 }
 </script>
 
-<style>
+<style scoped lang="scss">
+@import "../style/generals";
+@import "../style/vars";
+
+
 .main {
-    width: 100%;
-    height: 90vh;
-    background-color: darkgreen;
+    width: 60%;
+    height: calc(100vh - 80px);
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
 }
 
 </style>

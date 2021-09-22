@@ -4,7 +4,7 @@
     <div class="disk_cont">
                
         <div class="img_cont">
-        <img class="image" :src="info.poster" alt="info.author">
+            <img :src="info.poster" alt="info.author">
         </div>
         <h5>{{ info.title }}</h5>
         <div>{{ info.author }}</div>
@@ -24,17 +24,34 @@ export default {
 }
 </script>
 
-<style>
-.disk_cont {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-} .img_cont {
-    width: 8%;
-    height: 8%;
-} .image {
-    width: 100%;
-    height: 100%;
+<style scoped lang="scss">
+@import "../style/generals";
+@import "../style/vars";
+
+.container {
+    width: calc(100% / 5);
+
+    .disk_cont {
+        width: 150px;
+        height: 200px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 10px;
+        background-color: $light;
+        margin: 5px;
+
+        .img_cont {
+            width: 90%;
+            height: 90%;
+
+            img {
+                width: 100%;
+                height: 100%;
+            }
+        }
+    }
 }
+  
 
 </style>
