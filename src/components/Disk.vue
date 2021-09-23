@@ -33,7 +33,7 @@ export default {
 
     .disk_cont {
         width: 150px;
-        height: 200px;
+        height: 250px;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -43,12 +43,18 @@ export default {
 
         .img_cont {
             width: 90%;
-            height: 90%;
+            height: 50%;
 
             img {
                 width: 100%;
                 height: 100%;
             }
+        }
+
+        h5 {
+            color: white;
+            text-align: center;
+            padding: 10px;
         }
     }
 }
