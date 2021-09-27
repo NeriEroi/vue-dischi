@@ -8,20 +8,24 @@
 
 <script>
 import axios from 'axios';
-import Disk from './Disk.vue'
+import Disk from './Disk.vue';
+
+
 export default {
     name: 'Main',
     components: {
-        Disk
+        Disk,
     },
     data() {
         return {
            APIUrl: 'https://flynn.boolean.careers/exercises/api/array/music',
-           disksList: []
+           disksList: [],
+           genres: []
         }
     },
     created() {
         this.getDisks();
+        this.getGenre();
     },
     methods: {
         getDisks() {
@@ -30,7 +34,22 @@ export default {
                 .then( res => {
                     // console.log(res.data.response);
                     this.disksList = res.data.response;
-                })
+                });
+        },
+        getGenre() {
+            axios
+                .get(this.APIUrl)
+                .then( res => {
+                    // console.log(res.data.response);
+                    this.disksList = res.data.response;
+
+                    this.disksList.forEach((disk) => {
+                        if (!this.genres.includes(disk.genre)) {
+                            this.genres.push(disk.genre)
+                        }
+                    })
+                });
+                this.$emit("genresReady", this.genres)
         }
     }
 }
