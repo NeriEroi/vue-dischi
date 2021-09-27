@@ -1,7 +1,7 @@
 <template>
     <div id="app">
 
-      <Header :genres="genresList" @changeGenre="startSearch"/>
+      <Header :genres="genresList" @changedGenre="startSearch"/>
 
       <Main :selectedGenre="genreToSearch" @genresReady="getGenresList"/>
 

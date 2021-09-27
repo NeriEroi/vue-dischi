@@ -1,7 +1,7 @@
 <template>
     <div class="main">
 
-        <Disk v-for="(disk, index) in disksList" :key="index" :info="disk"/>
+        <Disk v-for="(disk, index) in filteredDisks" :key="index" :info="disk"/>
 
     </div>
 </template>
@@ -15,6 +15,19 @@ export default {
     name: 'Main',
     components: {
         Disk,
+    },
+    props: {
+        selectedGenre: String,
+    },
+    computed: {
+        filteredDisks() {
+            if (this.selectedGenre === "") {
+                return this.disksList;
+            }
+            return this.disksList.filter(
+                (item) => item.genre === this.selectedGenre
+            );
+        }
     },
     data() {
         return {
